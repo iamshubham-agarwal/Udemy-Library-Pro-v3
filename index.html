@@ -1,22 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Udemy Library Pro v3</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy Library Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
 </head>
+
 <body>
-<header class="topbar">
-<div class="brand"><h1>📚 Udemy Library Pro</h1><p>Personal Learning Dashboard</p></div>
-<div class="search-area"><input id="search" placeholder="Search courses..."></div>
-</header>
-<section id="stats" class="stats"></section>
-<div class="container">
-<aside class="sidebar"><div class="panel"><h2>Categories</h2><div id="cats"></div></div></aside>
-<main class="content">
-<div class="toolbar"><div><strong id="resultCount">0</strong> Courses</div><div class="actions"><select id="sort"><option value="title">Alphabetical</option><option value="rating">Highest Rating</option><option value="reviews">Most Reviews</option></select></div></div>
-<div id="courses" class="course-grid"></div>
-</main></div>
+
+<div class="app">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div>
+
+                <h2>Udemy Library</h2>
+
+                <small>Personal LMS</small>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <button class="nav-btn active" data-filter="all">
+                <i class="fa-solid fa-book"></i>
+                All Courses
+            </button>
+
+            <button class="nav-btn" data-filter="favorites">
+                <i class="fa-solid fa-star"></i>
+                Favorites
+            </button>
+
+            <button class="nav-btn" data-filter="progress">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                In Progress
+            </button>
+
+            <button class="nav-btn" data-filter="completed">
+                <i class="fa-solid fa-circle-check"></i>
+                Completed
+            </button>
+
+            <button class="nav-btn" data-filter="analytics">
+                <i class="fa-solid fa-chart-column"></i>
+                Analytics
+            </button>
+
+        </nav>
+
+        <div class="category-panel">
+
+            <h3>Categories</h3>
+
+            <div id="cats"></div>
+
+        </div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>My Learning Dashboard</h1>
+
+                <p>Manage your complete Udemy Library</p>
+
+            </div>
+
+            <div class="top-actions">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-search"></i>
+
+                    <input
+                        id="search"
+                        type="text"
+                        placeholder="Search courses..."
+                    >
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard Stats -->
+
+        <section id="stats" class="stats-grid"></section>
+
+        <!-- Toolbar -->
+
+        <section class="toolbar">
+
+            <div>
+
+                <select id="sort">
+
+                    <option value="title">Sort by Title</option>
+
+                    <option value="rating">Highest Rating</option>
+
+                    <option value="reviews">Most Reviews</option>
+
+                    <option value="progress">Progress</option>
+
+                    <option value="recent">Recently Accessed</option>
+
+                </select>
+
+            </div>
+
+            <div id="resultCount"></div>
+
+        </section>
+
+        <!-- Courses -->
+
+        <section
+            id="courses"
+            class="course-grid"
+        ></section>
+
+    </main>
+
+</div>
+
 <script src="script.js"></script>
-</body></html>
+
+</body>
+</html>
